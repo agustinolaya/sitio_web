@@ -8,19 +8,28 @@
 </head>
 <body>
     <!--header>h1{Universidad de Occidente}+h3>{Unidad Guasave}-->
-    <header>
+    <header id="encabezado">
         <h1>Universidad de Occidente</h1>
         <h3>Unidad Guasave</h3>
     </header>
     <!--main>figure>img[src="#" alt="text alt" width=960 height=320]+legend{texto de la imagen}-->
-    <main>
-        <figure>
-            <img src="#" alt="text alt" width="960" height="320">
-            <legend>texto de la imagen</legend>
-        </figure>
+    <main id="contenido">
+        <form action="#">
+            <label for="">Usuario</label>
+            <input type="text" name="txtUsuario" id="txtUsuario">
+            <label for="">Contraseña</label>
+            <input type="password" name="txtPassword" id="txtPassword">
+            <!--label>input:checkbox[name=remember id=remember]{Mantener la sesión iniciada}-->
+            <label>
+                <input type="checkbox" name="remember" id="remember">Mantener la sesión iniciada
+            </label>
+            <button type="submit">Iniciar Sesión</button>
+            <a href="lost.html">¿Olvidó su contraseña?</a>
+
+        </form>
     </main>
     <!--footer>hr+p{Todos los derechos reservados &copy; 2017}-->
-    <footer>
+    <footer id="pie">
         <hr>
         <p>Todos los derechos reservados &copy; 2017</p>
     </footer>

@@ -1,1 +1,17 @@
-/*TODO agregar código css*/
+/*Reglas CSS*/
+/* 1er Regla: Tipo etiqueta */
+
+body,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/*Tipo ID*/
+#encabezado {
+    /*bgc*/
+    background-color: #93485E;
+    padding: 10px;
+    color: 
+
+}
