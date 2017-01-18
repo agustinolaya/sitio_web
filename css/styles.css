@@ -1,6 +1,9 @@
 /*Reglas CSS*/
 /* 1er Regla: Tipo etiqueta */
 
+/*Regla {
+        propiedad: valor;
+    }*/
 body,h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
@@ -12,6 +15,30 @@ body,h1,h2,h3,h4,h5,h6 {
     /*bgc*/
     background-color: #93485E;
     padding: 10px;
-    color: #000;
+    color: #ffffff;
+
+}
+
+#login-form{
+    width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+#login-form .input {
+    width: 100%;
+    font-size: 1em;
+}
+
+#login-form .control{
+    margin-bottom: 20px;
+}
+
+#login-form .control label{
+    font-size: 1em;
+}
+/* Tipo Clase */
+.negrita {
+    font-weight: bold;
 
 }
