@@ -14,13 +14,14 @@ class Conexion extends mysqli {
         'database_host'=>'localhost',
         'database_name'=>'udo',
         'database_user'=>'root',
-        'database_passwd'=>'root',
+        'database_passwd'=>'',
         'database_port'=>'3306'
             );
-            $this->conectar();
+            // $this->conectar();
+            parent::__construct($this->database_host, $this->database_user, $this->database_passwd, $this->database_name, $this->database_port);
         }
 
-        public function __construct1($host, $name, $user, $passwd, $port)
+        public function __construct1($host, $user, $name, $passwd, $port)
         {
             $this->datos= array(
         'database_host'=>$host,
@@ -29,7 +30,8 @@ class Conexion extends mysqli {
         'database_passwd'=>$passwd,
         'database_port'=>$port
             );
-            $this->conectar();
+            // $this->conectar();
+            parent::__construct($host, $user, $name, $passwd, $port);
         }
         
 
@@ -47,7 +49,7 @@ class Conexion extends mysqli {
     public function __get($keyname)
     {
         if(array_key_exists($keyname, $this->datos))
-        return $this->$datos[$keyname];        
+        return $this->datos[$keyname];        
     }
 
     public function __set($keyname, $value)
@@ -57,12 +59,11 @@ class Conexion extends mysqli {
     }
 }
 
-$objeto = new Conexion();
-var_dump($objeto);
-// $a = mysqli_connect('localhost','root','root','udo','3306');
-// $b = mysqli_query($a, 'select * from usuarios');
-// $c = mysqli_fetch_assoc($b);
+// $objeto = new Conexion();
+// // $a = mysqli_connect('localhost','root','root','udo','3306');
+// // $b = mysqli_query($a, 'select * from usuarios');
+// // $c = mysqli_fetch_assoc($b);
 
-$rst = $objeto->query('select * from usuarios');
-var_dump($rst);
-$r = $rst->fetch();
+// $rst = $objeto->query('select * from usuarios');
+// $r = $rst->fetch_assoc();
+// var_dump($r);
