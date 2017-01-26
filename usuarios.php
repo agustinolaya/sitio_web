@@ -19,20 +19,40 @@ require 'conexion.php';
             $cnn = new Conexion();
             $sql = sprintf("select * from usuarios where username='%s' and password='%s'", $user, md5($passwd));
             $rst = $cnn->query($sql);
-            if ($rst){
+            if ($rst) {
                 if ($rst->num_rows == 1) {
                     $r = $rst->fetch_assoc();
-                    $usuario = new usuario();
+                    $usuario = new Usuario();
                     $usuario->id = $r['id'];
                     $usuario->username = $r['username'];
                     $usuario->nombre = $r['nombre'];
                     $usuario->apellidos = $r['apellidos'];
                     $usuario->email = $r['email'];
-                    return $usuario;
+
+                    $datos = [
+                            'data' => [
+                                'login' => true,
+                                'usuario' => $usuario->datos
+                            ]
+                    ];
+
+                    // array_push($datos['usuario'], $usuario->datos);                    
                 } else {
-                return null;
+                    $datos = [
+                                'data' => [
+                                    'login' => false
+                                ]
+                    ];               
                 }
+            } else {
+                $datos = [
+                            'data' => [
+                                'login' => 'fail'
+                            ]
+                ];
             }
+
+            return $datos;
         }
         
 
@@ -51,4 +71,4 @@ require 'conexion.php';
     }
 
     $u = Usuario::login('agustin', '123');
-    var_dump($u);
+    phpinfo();
