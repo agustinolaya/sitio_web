@@ -2,9 +2,9 @@
 class Conexion extends mysqli {
     private $datos = array(
         'database_host'=>'',
-        'database_name'=>'',
         'database_user'=>'',
         'database_passwd'=>'',
+        'database_name'=>'',
         'database_port'=>''
         );
 
@@ -12,9 +12,9 @@ class Conexion extends mysqli {
         {
             $this->datos= array(
         'database_host'=>'localhost',
-        'database_name'=>'udo',
         'database_user'=>'root',
         'database_passwd'=>'',
+        'database_name'=>'udo',
         'database_port'=>'3306'
             );
             // $this->conectar();
@@ -58,12 +58,11 @@ class Conexion extends mysqli {
         $this->datos[$keyname] = $value;
     }
 }
-
 // $objeto = new Conexion();
-// // $a = mysqli_connect('localhost','root','root','udo','3306');
-// // $b = mysqli_query($a, 'select * from usuarios');
-// // $c = mysqli_fetch_assoc($b);
+// $a = mysqli_connect('localhost','root','root','udo','3306');
+// $b = mysqli_query($a, 'select * from usuarios');
+// $c = mysqli_fetch_assoc($b);
 
 // $rst = $objeto->query('select * from usuarios');
 // $r = $rst->fetch_assoc();
-// var_dump($r);
+// var_dump($r);-->

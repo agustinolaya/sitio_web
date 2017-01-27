@@ -15,7 +15,7 @@
     <!--main>figure>img[src="#" alt="text alt" width=960 height=320]+legend{texto de la imagen}-->
     <main id="contenido">
         <div id="login-form">
-            <form action="#">
+            <form>
                 <div class="control">
                     <label for="txtUsuario" class="negrita">Usuario</label><br>
                     <input type="text" name="txtUsuario" id="txtUsuario" class="input">
@@ -28,7 +28,7 @@
                 <label class="block">
                     <input type="checkbox" name="remember" id="remember">Mantener la sesión iniciada
                 </label>
-                <button onclick="login()">Iniciar Sesión</button>
+                <button id="login-button">Iniciar Sesión</button>
             
             </form>
                 <a href="lost.html" class="text-center block">¿Olvidó su contraseña?</a>
@@ -39,6 +39,7 @@
         <hr>
         <p>Todos los derechos reservados &copy; <span class="negrita">2017</span></p>
     </footer>
+    <script src="js/jquery-3.1.1.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

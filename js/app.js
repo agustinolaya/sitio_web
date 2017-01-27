@@ -1,9 +1,14 @@
-// TODO agregar código javascript
-// alert('Hola Mundo');
-console.log('Hola desde la consola de javascript juejnujeueujeue xd');
-
-function login(){
-    var usuario = document.getElementById('txtUsuario').value;
-    var passwd = document.getElementById('txtPassword').value;
-    alert('Usuario: '+ usuario + ', Contraseña: ' + passwd);
+function login(usuario, passwd){
+    $.post("login.php", {txtUsuario:usuario, txtPassword:passwd}, function(data){
+        return data;
+    }, 'json');
 }
+
+$(document).ready(function(){
+    $('#login-button').click(function(event) {
+    event.preventDefault();
+    var usuario = $('#txtUsuario').val();
+    var passwd = $('#txtPassword').val();
+    login(usuario, passwd);
+    });
+});

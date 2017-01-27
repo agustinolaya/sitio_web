@@ -16,9 +16,11 @@ require 'conexion.php';
 
         public static function login($user, $passwd)
         {
+            $datos = ['data' => [ 'login' => '']];
             $cnn = new Conexion();
             $sql = sprintf("select * from usuarios where username='%s' and password='%s'", $user, md5($passwd));
             $rst = $cnn->query($sql);
+            $cnn->close();
             if ($rst) {
                 if ($rst->num_rows == 1) {
                     $r = $rst->fetch_assoc();
@@ -29,30 +31,18 @@ require 'conexion.php';
                     $usuario->apellidos = $r['apellidos'];
                     $usuario->email = $r['email'];
 
-                    $datos = [
-                            'data' => [
-                                'login' => true,
-                                'usuario' => $usuario->datos
-                            ]
-                    ];
+                    $datos['data']['login'] = true;
+                    $datos['data']['usuario'] = $usuario->datos;
 
                     // array_push($datos['usuario'], $usuario->datos);                    
                 } else {
-                    $datos = [
-                                'data' => [
-                                    'login' => false
-                                ]
-                    ];               
+                    $datos['data']['login'] = false;
                 }
             } else {
-                $datos = [
-                            'data' => [
-                                'login' => 'fail'
-                            ]
-                ];
+                $datos['data']['login'] = 'fail';
             }
 
-            return $datos;
+            return json_encode($datos, JSON_PRETTY_PRINT);
         }
         
 
@@ -70,5 +60,5 @@ require 'conexion.php';
         }
     }
 
-    $u = Usuario::login('agustin', '123');
-    phpinfo();
+//     $u = Usuario::login('agustin', '123');
+//    var_dump($u);
