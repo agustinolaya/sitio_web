@@ -14,15 +14,19 @@
     </header>
     <!--main>figure>img[src="#" alt="text alt" width=960 height=320]+legend{texto de la imagen}-->
     <main id="contenido">
-        <div id="login-form">
+        <div id="login-form" class="form">
             <form>
+                <div id="login-form-msg" class="error oculto"></div>
                 <div class="control">
                     <label for="txtUsuario" class="negrita">Usuario</label><br>
                     <input type="text" name="txtUsuario" id="txtUsuario" class="input">
+                    <!--div.error.oculto{Este campo es obligatorio wey}-->
+                    <div class="error oculto">Este campo es obligatorio wey</div>
                 </div>
                 <div class="control">
                     <label for="txtPassword" class="negrita">Contraseña</label><br>
                     <input type="password" name="txtPassword" id="txtPassword" class="input">
+                    <div class="error oculto">Este campo es obligatorio wey</div>
                 </div>
                 <!--label>input:checkbox[name=remember id=remember]{Mantener la sesión iniciada}-->
                 <label class="block">

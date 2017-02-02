@@ -27,6 +27,22 @@ body{
     width: 400px;
     margin: 0 auto;
     padding: 15px;
+}
+
+#profile-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+#profile-form * {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.form{
+
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -74,4 +90,16 @@ body{
 
 .text-center {
     text-align: center;
+}
+
+.error {
+    color: red;
+    background-color: #ffcccc;
+    border: 1px solid #ff8080;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.oculto {
+    display: none;
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Agustín Olaya Martínez">
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado">
+        <h1>Universidad de Occidente</h1>
+        <h3>Unidad Guasave</h3>
+    </header>
+    <main id="contenido">
+       <form id="profile-form" class="form">
+        <h3>Perfil de Usuario</h3>
+           <!--input#user-id[type=hidden]-->
+           <input type="hidden" id="userid" name="userid">
+           <!--input[type=text name=username id=username required placeholder='Nombre de usuario']-->
+           <input type="text" name="username" id="username" required placeholder="Nombre de usuario">
+           <input type="text" name="nombre" id="nombre" required placeholder="Nombre de pila">
+           <input type="text" name="apellidos" id="apellidos" required placeholder="Apellidos">
+           <input type="email" name="email" id="email" required placeholder="Correo Electrónico">
+
+       </form>
+    </main>
+    <footer id="pie">
+        <hr>
+        <p>Todos los derechos reservados &copy; <span class="negrita">2017</span></p>
+    </footer>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        $('#userid').val(sessionStorage.userid);
+        $('#username').val(sessionStorage.username);
+        $('#nombre').val(sessionStorage.nombre);
+        $('#apellidos').val(sessionStorage.apellidos);
+        $('#email').val(sessionStorage.email);        
+    </script>
+</body>
+</html>
