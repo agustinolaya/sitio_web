@@ -23,6 +23,14 @@ function login(usuario, passwd) {
 }
 
 $(document).ready(function(){
+
+    $.post("login.php", function(response) {
+        //Verificar sesión
+        if(typeof(response.data.token) != 'undefined'){
+            window.location.href='perfil.html';
+        }
+    });
+
     $('#login-button').click(function(event) {
     event.preventDefault();
     var usuario = $('#txtUsuario').val();

@@ -33,7 +33,11 @@ require 'conexion.php';
 
                     $datos['data']['login'] = true;
                     $datos['data']['usuario'] = $usuario->datos;
-
+                    if(!$_SESSION['user']){   
+                        $user = md5($usuario->username.date());
+                        $datos['data']['token'] = $token;
+                        $_SESSION['user'] = $datos;
+                    }
                     // array_push($datos['usuario'], $usuario->datos);                    
                 } else {
                     $datos['data']['login'] = false;
